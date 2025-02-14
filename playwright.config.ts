@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+const API_TEST_PATH = "tests/API/API/API.spec.ts"
+const UI_TEST_PATH = "tests/UI/Integration/UI.spec.ts"
 
 /**
  * Read environment variables from file.
@@ -7,7 +9,6 @@ import { defineConfig, devices } from '@playwright/test';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
-
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -31,22 +32,24 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
-
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: UI_TEST_PATH,
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testMatch: UI_TEST_PATH,
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      testMatch: UI_TEST_PATH,
     },
 
     /* Test against mobile viewports. */

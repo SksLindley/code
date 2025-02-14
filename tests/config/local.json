@@ -1,0 +1,12 @@
+{
+    "UI": {
+        "baseUrl": "https://www.bjss.com/"
+    },
+    "API": {
+        "baseUrl": "https://restful-booker.herokuapp.com",
+        "endpoints": {
+            "booking": "/booking",
+            "ping": "/ping"
+        }
+    }
+}
