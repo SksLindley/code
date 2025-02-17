@@ -15,7 +15,7 @@ test.describe(
         throw new Error(
           "The website is not available"
         );
-    }
+    })
   });
 
 
@@ -28,10 +28,10 @@ test.beforeEach(async ({ homePage, cookieModal }) => {
 test(
   "Test visibility of Buttons",
   async ({ homePage }) => {
-    expect(homePage.contactUsButton).toBeVisible();
-    expect(homePage.aboutUsButton).toBeVisible();
-    expect(homePage.industriesButton).toBeVisible();
-    expect(homePage.whatWeDoButton).toBeVisible();
+    await expect(homePage.contactUsButton).toBeVisible();
+    await expect(homePage.aboutUsButton).toBeVisible();
+    await expect(homePage.industriesButton).toBeVisible();
+    await expect(homePage.whatWeDoButton).toBeVisible();
 
   }
 );
